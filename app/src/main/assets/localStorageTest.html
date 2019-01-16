@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<input id="keyInput" type="text" placeholder="输入key值">
+<input id="valueInput" type="text" placeholder="输入value值">
+<button id="save">保存</button>
+<button id="get">取值</button>
+
+</body>
+<script>
+  document.getElementById('save').addEventListener('click', function () {
+    var key = document.getElementById('keyInput').value
+    var value = document.getElementById('valueInput').value
+    localStorage.setItem("key", key)
+    localStorage.setItem("value", value)
+    alert('保存成功')
+  })
+  document.getElementById('get').addEventListener('click', function () {
+    document.getElementById('keyInput').value = localStorage.getItem("key")
+    document.getElementById('valueInput').value = localStorage.getItem("value")
+  })
+</script>
+</html>
